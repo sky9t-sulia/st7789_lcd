@@ -1,6 +1,6 @@
 # ST7789 LCD C++ Library for esp32, rp2020, stm32
 
-⚠️Note: Currently only **STM32** supported. Other platforms is in development⚠️
+**⚠️Note: Currently only **STM32** supported. Other platforms is in development⚠️**
 
 &nbsp;
 
