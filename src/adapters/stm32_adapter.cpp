@@ -1,10 +1,3 @@
-/*
- * stm32.c
- *
- *  Created on: 25 окт. 2022 г.
- *      Author: umudo
- */
-
 #include "stm32_adapter.h"
 
 ST7789_STM32_Adapter::ST7789_STM32_Adapter() {

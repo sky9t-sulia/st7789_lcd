@@ -1,10 +1,3 @@
-/*
- * registers.h
- *
- *  Created on: Oct 23, 2022
- *      Author: umudo
- */
-
 #ifndef ST7789_CONSTANTS_H_
 #define ST7789_CONSTANTS_H_
 

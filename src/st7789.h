@@ -5,13 +5,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "adapters/adapter.h"
-
 #include "constants.h"
-
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "adapters/adapter.h"
 
 /**
  * ------------------------------------------------------------------------
@@ -34,7 +29,6 @@ class ST7789_LCD {
 public:
 	ST7789_LCD(uint16_t width, uint16_t height, ST7789_HW_Adapter *adapter);
 	void set_rotation(uint8_t m);
-
 	void fill_screen(uint16_t color);
 	void draw_pixel(uint16_t x, uint16_t y, uint16_t color);
 	void draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,
@@ -53,21 +47,11 @@ private:
 	ST7789_HW_Adapter *hw;
 	void init();
 
-	void cs_set();
-	void cs_unset();
-	void dc_set();
-	void dc_unset();
-	void rst_set();
-	void rst_unset();
 	void send_command(uint8_t command);
 	void send_data(uint8_t *buff, size_t buff_size);
 	void send_small_data(uint8_t data);
 	void set_address_window(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
-}
-;
+};
 
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* ST7789_H_ */
