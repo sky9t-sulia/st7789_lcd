@@ -1,17 +1,13 @@
-# ST7789 LCD C++ Library
+# ST7789 LCD C++ Library for esp32, rp2020, stm32
 
-The codebase was looked from https://github.com/Floyd-Fish/ST7789-STM32 
+Originally code was looked from *https://github.com/Floyd-Fish/ST7789-STM32*
 
-## Key features
-This library is written on C++ and can be used for esp32, RP2020, and stm32 using adapters.
+This library is written on C++ and can be used for **ESP32**, **RP2020**, and **STM32** using provided adapters.
 
 &nbsp;
 ## Setup
-Include adapter header for your platform and the library itself.
+Include adapter header for your platform and the library itself for example **STM32**:.
 
-&nbsp;
-
-Include headers
 
 ```cpp
 #include <st7789_lcd/src/adapters/stm32_adapter.h>
@@ -19,16 +15,17 @@ Include headers
 ```
 
 Then you need to:
-1. Create and setup adapter.
-2. Create instanse of lcd.
+1. Fill pin configuration into ```st7789_stm32_adapter_pinout_t```
+2. Create instanse of adapter for stm32 and setup it.
+3. Create instanse of lcd.
 
 &nbsp;
 
 ```cpp
 st7789_stm32_adapter_pinout_t pinout = { 
-    .cs_port = GPIOA, 
-    .dc_port = GPIOA, 
-    .rst_port = GPIOA, 
+    .cs_port = GPIOA,           // CS port
+    .dc_port = GPIOA,           // CS pin on display
+    .rst_port = GPIOA,          // ...
     .cs_pin = GPIO_PIN_2, 
     .dc_pin = GPIO_PIN_1, 
     .rst_pin = GPIO_PIN_0 
