@@ -5,20 +5,6 @@ uint16_t DMA_MIN_SIZE = 16;
 #define HOR_LEN 40 // Mind the resolution of your screen!
 #endif
 
-/**
- * ------------------------------------------------------------------------
- * HELPER METHODS
- * ------------------------------------------------------------------------
- */
-
-uint16_t* memset16(uint16_t *m, uint16_t val, size_t count) {
-	uint16_t *buf = m;
-
-	while (count--)
-		*buf++ = val;
-	return m;
-}
-
 ST7789_LCD::ST7789_LCD(uint16_t width, uint16_t height, ST7789_HW_Adapter *adapter) {
 	this->width = width;
 	this->height = height;
@@ -232,13 +218,13 @@ void ST7789_LCD::draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,
 		uint16_t color) {
 	uint16_t steep = abs(y2 - y1) > abs(x2 - x1);
 	if (steep) {
-		_swap_uint16_t(x1, y1);
-		_swap_uint16_t(x2, y2);
+		swap_uint16_t(x1, y1);
+		swap_uint16_t(x2, y2);
 	}
 
 	if (x1 > x2) {
-		_swap_uint16_t(x1, x2);
-		_swap_uint16_t(y1, y2);
+		swap_uint16_t(x1, x2);
+		swap_uint16_t(y1, y2);
 	}
 
 	int16_t dx, dy;

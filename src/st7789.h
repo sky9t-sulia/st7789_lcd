@@ -1,29 +1,12 @@
 #ifndef ST7789_H_
 #define ST7789_H_
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <stdint.h>
+#include <malloc.h>
 
+#include "helpers.h"
 #include "constants.h"
 #include "adapters/adapter.h"
-
-/**
- * ------------------------------------------------------------------------
- * HELPERS DEFINITION
- * ------------------------------------------------------------------------
- */
-#define abs(x) ((x) > 0 ? (x) : -(x))
-uint16_t* memset16(uint16_t *m, uint16_t val, size_t count);
-
-#ifndef _swap_uint16_t
-#define _swap_uint16_t(a, b)                                                   \
-  {                                                                            \
-	uint16_t t = a;                                                            \
-    a = b;                                                                     \
-    b = t;                                                                     \
-  }
-#endif
 
 class ST7789_LCD {
 public:
