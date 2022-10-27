@@ -25,8 +25,10 @@ public:
 	void dc_unset();
 	void rst_set();
 	void rst_unset();
-	void spi_transmit(uint8_t *command, int size);
-	void spi_transmit_dma(uint8_t *buff, int size);
+	void send_command(uint8_t command);
+	void send_small_data(uint8_t data);
+	void send_data(uint16_t *buff, int buff_size);
+	void send_data(uint8_t *buff, int buff_size);
 	void spi_wait();
 };
 

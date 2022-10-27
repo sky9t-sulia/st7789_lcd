@@ -2,11 +2,6 @@
 #define ST7789_CONSTANTS_H_
 
 /**
- * comment out this line to not use DMA.
- */
-#define USE_DMA
-
-/**
  *Color of pen
  *If you want to use another color, you can choose one in RGB565 format.
  */
@@ -87,6 +82,5 @@
 /* Advanced options */
 #define ST7789_COLOR_MODE_16bit 0x55    //  RGB565 (16bit)
 #define ST7789_COLOR_MODE_18bit 0x66    //  RGB666 (18bit)
-#define ST7789_COLOR_SWAP(color) ((color << 8) | (color >> 8))
 
 #endif /* ST7789_CONSTANTS_H_ */

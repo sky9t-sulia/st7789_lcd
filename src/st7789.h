@@ -22,6 +22,7 @@ public:
 	void draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color);
 	void draw_fill_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color);
 private:
+	uint16_t hor_len;
 	uint16_t width;
 	uint16_t height;
 	uint16_t x_shift;
@@ -29,10 +30,6 @@ private:
 	uint8_t rotation;
 	ST7789_HW_Adapter *hw;
 	void init();
-
-	void send_command(uint8_t command);
-	void send_data(uint8_t *buff, size_t buff_size);
-	void send_small_data(uint8_t data);
 	void set_address_window(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
 };
 
